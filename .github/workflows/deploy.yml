@@ -33,6 +33,11 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          BASE_PATH: /password-token-generator/
+
+      - name: Copy index.html to 404.html for SPA routing
+        run: cp ./build/client/index.html ./build/client/404.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
